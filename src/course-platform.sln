@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		compose.yaml = compose.yaml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{0052F5CC-FB86-4628-A667-EF038DA066B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{C0E36233-F1DB-43F2-AB24-53E7E721E2FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,5 +21,13 @@ Global
 		{1E10ABD6-364A-474C-AEEC-42112A2DA60D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E10ABD6-364A-474C-AEEC-42112A2DA60D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E10ABD6-364A-474C-AEEC-42112A2DA60D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0052F5CC-FB86-4628-A667-EF038DA066B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0052F5CC-FB86-4628-A667-EF038DA066B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0052F5CC-FB86-4628-A667-EF038DA066B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0052F5CC-FB86-4628-A667-EF038DA066B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E36233-F1DB-43F2-AB24-53E7E721E2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E36233-F1DB-43F2-AB24-53E7E721E2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E36233-F1DB-43F2-AB24-53E7E721E2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E36233-F1DB-43F2-AB24-53E7E721E2FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
