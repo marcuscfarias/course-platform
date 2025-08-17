@@ -4,7 +4,7 @@ A backend-focused web application for managing online courses with multi-tenancy
 ## TODO:
 
 ### Generic Features
-- [ ] Generic exceptions
+- [ ] Generic exceptions (structure logs with sentry)
 - [ ] Global error handler middleware
 - [ ] Global validation filter
 
@@ -57,7 +57,7 @@ A backend-focused web application for managing online courses with multi-tenancy
 - [ ] Clean Architecture 
 - [ ] Domain Driven Design
 - [ ] Command Query Responsibility Segregation
-- [ ] TDD
+- [ ] TDD (unit and integration tests)
 
 ### Database
 - [ ] User table
@@ -66,3 +66,8 @@ A backend-focused web application for managing online courses with multi-tenancy
 - [ ] CD/CI with github actions (Build & Test, Dockerize API, Push Image to GitHub Container Registry, Push Image to GitHub Container Registry)
 - [ ] App Service Azure
 - [ ] Key Vault
+- [ ] Dev and Prod environment
+- [ ] config environment variables and secrets
+
+### Documentation
+- [ ] automatically generate them
