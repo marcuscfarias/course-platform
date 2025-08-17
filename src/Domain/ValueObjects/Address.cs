@@ -1,15 +1,7 @@
-﻿
-namespace Domain.ValueObjects;
+﻿namespace Domain.ValueObjects;
 
 public sealed class Address : ValueObject
 {
-    public string Cep { get; init; }
-    public string Street { get; init; }
-    public int Number { get; init; }
-    public string City { get; init; }
-    public string State { get; init; }
-    public string? Complement { get; init; }
-
     //TODO: property validation
     public Address(string cep, string street, int number, string city, string state, string complement)
     {
@@ -20,6 +12,14 @@ public sealed class Address : ValueObject
         State = state ?? throw new ArgumentNullException(nameof(state));
         Complement = complement ?? throw new ArgumentNullException(nameof(complement));
     }
+
+    public string Cep { get; init; }
+    public string Street { get; init; }
+    public int Number { get; init; }
+    public string City { get; init; }
+    public string State { get; init; }
+    public string? Complement { get; init; }
+
     protected override IEnumerable<object?> GetAtomicValues()
     {
         yield return Cep;
