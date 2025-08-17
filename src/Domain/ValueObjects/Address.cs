@@ -8,8 +8,8 @@ public sealed class Address : ValueObject
     public int Number { get; init; }
     public string City { get; init; }
     public string State { get; init; }
-    public string Complement { get; init; }
-    
+    public string? Complement { get; init; }
+
     //TODO: property validation
     public Address(string cep, string street, int number, string city, string state, string complement)
     {
@@ -20,7 +20,7 @@ public sealed class Address : ValueObject
         State = state ?? throw new ArgumentNullException(nameof(state));
         Complement = complement ?? throw new ArgumentNullException(nameof(complement));
     }
-    protected override IEnumerable<object> GetAtomicValues()
+    protected override IEnumerable<object?> GetAtomicValues()
     {
         yield return Cep;
         yield return Street;
