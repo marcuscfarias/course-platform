@@ -7,33 +7,31 @@ namespace Domain.Entities;
 public class User : BaseEntity
 {
     //TODO: property validation
-    public User(Cpf cpf, string firstName, string lastName, UserRoleEnum role, Email email, string password,
-        bool isActive, DateOnly birthDate, Address address)
+    public User(string firstName)
     {
-        Cpf = cpf ?? throw new ArgumentNullException(nameof(cpf));
+        // Cpf = cpf ?? throw new ArgumentNullException(nameof(cpf));
         FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
-        LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
-        Role = role;
-        Email = email ?? throw new ArgumentNullException(nameof(email));
-        Password = password ?? throw new ArgumentNullException(nameof(password));
-        IsActive = isActive;
-        BirthDate = birthDate;
-        Address = address ?? throw new ArgumentNullException(nameof(address));
+        // LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
+        // Role = role;
+        // Email = email ?? throw new ArgumentNullException(nameof(email));
+        // Password = password ?? throw new ArgumentNullException(nameof(password));
+        // IsActive = isActive;
+        // BirthDate = birthDate;
+        // Address = address ?? throw new ArgumentNullException(nameof(address));
     }
 
-    public Cpf Cpf { get; private set; }
+    // public Cpf Cpf { get; private set; }
     public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public UserRoleEnum Role { get; private set; }
-    public Email Email { get; private set; }
-    public string Password { get; private set; }
-    public bool IsActive { get; private set; }
-    public DateOnly BirthDate { get; private set; }
-    public Address Address { get; private set; }
-
-
-    public void Deactivate()
-    {
-        IsActive = false;
-    }
+    // public string LastName { get; private set; }
+    // public UserRoleEnum Role { get; private set; }
+    // public Email Email { get; private set; }
+    // public string Password { get; private set; }
+    // public bool IsActive { get; private set; }
+    // public DateOnly BirthDate { get; private set; }
+    // public Address Address { get; private set; }
+    //
+    // public void Deactivate()
+    // {
+    //     IsActive = false;
+    // }
 }
