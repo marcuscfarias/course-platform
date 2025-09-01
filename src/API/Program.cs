@@ -12,6 +12,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    //TODO: config docker secrets
     app.UseSwagger();
     app.UseSwaggerUI();
 }
