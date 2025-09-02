@@ -1,5 +1,40 @@
-# course-plataform
-A backend-focused web application for managing online courses with multi-tenancy support. It enables administrators, instructors, and students to interact with educational content securely and at scale, using role-based access and a modular architecture.
+<h1 align="center">
+Course Platform</h1>
+<p align="center">
+  <a href="https://github.com/marcuscfarias/course-platform/issues"><img alt="number of issues for the repository" src="https://img.shields.io/github/issues/marcuscfarias/course-platform?color=red&label=Issues&style=for-the-badge" target="_blank" /></a>
+  <a href="https://github.com/marcuscfarias/course-platform"><img alt="the size of the repo in kb" src="https://img.shields.io/github/repo-size/marcuscfarias/course-platform?color=orange&label=Repo-Size&style=for-the-badge" target="_blank" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img alt="licence the repo is published under" src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" target="_blank" /></a>
+ <a href="https://github.com/marcuscfarias/course-platform/graphs/contributors"><img alt="the number of contributors on the repo" src="https://img.shields.io/github/contributors/marcuscfarias/course-platform?color=brightgreen&label=Contributors&style=for-the-badge" target="_blank" /></a>
+  <a href="https://github.com/marcuscfarias/course-platform/network/members"><img alt="total number of times the repo has been forked" src="https://img.shields.io/github/forks/marcuscfarias/course-platform?color=blue&label=Forks&style=for-the-badge" target="_blank" /></a>
+  <a href="https://github.com/marcuscfarias/course-platform/stargazers"><img alt="total number of times the repo has been starred" src="https://img.shields.io/github/stars/marcuscfarias/course-platform?color=blueviolet&label=Stars&style=for-the-badge" target="_blank" /></a>
+</p>
+
+1. About this project
+   1. Description
+   2. Why
+   3. Demo link (other screenshots)
+2. Features (table)
+3. Database schema
+Technologies, Frameworks, Patterns and Architecture (with image)
+4. Getting started (not necessary, because already have a demo)
+5. Contributing
+6. License
+7. Technical Explanation/Discussion
+
+
+
+
+- o que ele faz?
+- o que é? web api
+- quais tecnologias usadas?
+- qual ambição do projeto?
+- qual estágio do projeto?
+- faça tabelinha de progress
+- listar coisas que não funcionam (list of uses cases that need to be improved)
+- demo executavel
+- documentação legivel e clara
+- commits atomicos
+- semantic versioning
 
 ## TODO:
 
@@ -63,7 +98,7 @@ A backend-focused web application for managing online courses with multi-tenancy
 - [ ] User table
   
 ### Deployment:
-- [ ] CD/CI with github actions (Build & Test, Dockerize API, Push Image to GitHub Container Registry, Push Image to GitHub Container Registry)
+- [ ] CD/CI with GitHub actions (Build & Test, Dockerize API, Push Image to GitHub Container Registry, Push Image to GitHub Container Registry)
 - [ ] App Service Azure
 - [ ] Key Vault
 - [ ] Dev and Prod environment
