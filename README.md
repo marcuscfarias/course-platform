@@ -21,8 +21,35 @@ Technologies, Frameworks, Patterns and Architecture (with image)
 6. License
 7. Technical Explanation/Discussion
 
+## 📋 Feature Table
 
-
+| ID | Feature        |                            Description                             |  Status   |
+|:--:|:--------------:|:------------------------------------------------------------------:|:---------:|
+| 1  | User CRUD      |                 Create, Read, Update, Delete users                 | `✅ Done`  |
+| 2  | Authentication | Secure signup, login and logout   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | `⏳ Planned` |
+| 3  | Authorization  |              Role-based access control (Admin, User)               | `⏳ Planned` |
+| 4  |                |                                                                    |             |
+| 5  |                |                                                                    |             |
+| 6  |                |                                                                    |             |
+| 7  |                |                                                                    |             |
+| 8  |                |                                                                    |             |
+| 9  |                |                                                                    |             |
+| 10 |                |                                                                    |             |
+| 11 |                |                                                                    |             |
+| 12 |                |                                                                    |             |
+| 13 |                |                                                                    |             |
+| 14 |                |                                                                    |             |
+| 15 |                |                                                                    |             |
+| 16 |                |                                                                    |             |
+| 17 |                |                                                                    |             |
+| 18 |                |                                                                    |             |
+| 19 |                |                                                                    |             |
+| 20 |                |                                                                    |             |
+| 21 |                |                                                                    |             |
+| 22 |                |                                                                    |             |
+| 23 |                |                                                                    |             |
+| 24 |                |                                                                    |             |
+| 25 |                |                                                                    |             |
 
 - o que ele faz?
 - o que é? web api
@@ -37,7 +64,6 @@ Technologies, Frameworks, Patterns and Architecture (with image)
 - semantic versioning
 
 ## TODO:
-
 ### Generic Features
 - [ ] Generic exceptions (structure logs with sentry)
 - [ ] Global error handler middleware
