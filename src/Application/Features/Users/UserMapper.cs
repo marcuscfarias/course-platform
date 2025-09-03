@@ -1,11 +1,18 @@
 ﻿using Application.Features.Users.CreateUser;
+using Application.Features.Users.GetUserById;
+using Domain.Entities;
 
 namespace Application.Features.Users;
 
 public static class UserMapper
 {
-    public static Domain.Entities.User ToDomain(this CreateUserCommand command)
+    public static User ToDomain(this CreateUserCommand command)
     {
-        return new Domain.Entities.User(command.Name);
+        return new User(command.Name);
+    }
+    
+    public static GetUserByIdViewModel ToUserViewModel(this User user)
+    {
+        return new GetUserByIdViewModel(user.Name);
     }
 }
