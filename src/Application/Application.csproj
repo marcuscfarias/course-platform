@@ -11,4 +11,14 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Features\Users\GetAllUsers\" />
+      <Folder Include="Features\Users\GetUserById\" />
+      <Folder Include="Features\Users\UpdateUser\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\Domain.csproj" />
+    </ItemGroup>
+
 </Project>

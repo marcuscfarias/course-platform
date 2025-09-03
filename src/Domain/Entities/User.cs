@@ -7,10 +7,10 @@ namespace Domain.Entities;
 public class User : BaseEntity
 {
     //TODO: property validation
-    public User(string firstName)
+    public User(string name)
     {
         // Cpf = cpf ?? throw new ArgumentNullException(nameof(cpf));
-        FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
+        Name = name ?? throw new ArgumentNullException(nameof(name));
         // LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
         // Role = role;
         // Email = email ?? throw new ArgumentNullException(nameof(email));
@@ -21,7 +21,7 @@ public class User : BaseEntity
     }
 
     // public Cpf Cpf { get; private set; }
-    public string FirstName { get; private set; }
+    public string Name { get; private set; }
     // public string LastName { get; private set; }
     // public UserRoleEnum Role { get; private set; }
     // public Email Email { get; private set; }

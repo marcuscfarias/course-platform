@@ -18,11 +18,6 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         throw new NotImplementedException();
     }
 
-    public Task<TEntity?> GetByCpfAsync(string cpf)
-    {
-        throw new NotImplementedException();
-    }
-
     public Task<IEnumerable<TEntity>> GetAllAsync()
     {
         throw new NotImplementedException();

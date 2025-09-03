@@ -13,7 +13,7 @@ public class UserConfiguration: IEntityTypeConfiguration<User>
         builder.ToTable("User");
 
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.FirstName)
+        builder.Property(x => x.Name)
             .HasMaxLength(30)
             .IsRequired();
     }
