@@ -9,126 +9,165 @@ Course Platform</h1>
   <a href="https://github.com/marcuscfarias/course-platform/stargazers"><img alt="total number of times the repo has been starred" src="https://img.shields.io/github/stars/marcuscfarias/course-platform?color=blueviolet&label=Stars&style=for-the-badge" target="_blank" /></a>
 </p>
 
-1. About this project
-   1. Description
-   2. Why
-   3. Demo link (other screenshots)
-2. Features (table)
-3. Database schema
-Technologies, Frameworks, Patterns and Architecture (with image)
-4. Getting started (not necessary, because already have a demo)
-5. Contributing
-6. License
-7. Technical Explanation/Discussion
+## 1. About this project
 
-## 📋 Feature Table
+#### 1.1 Overview
 
-| ID | Feature        |                            Description                             |  Status   |
-|:--:|:--------------:|:------------------------------------------------------------------:|:---------:|
-| 1  | User CRUD      |                 Create, Read, Update, Delete users                 | `✅ Done`  |
-| 2  | Authentication | Secure signup, login and logout   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | `⏳ Planned` |
-| 3  | Authorization  |              Role-based access control (Admin, User)               | `⏳ Planned` |
-| 4  |                |                                                                    |             |
-| 5  |                |                                                                    |             |
-| 6  |                |                                                                    |             |
-| 7  |                |                                                                    |             |
-| 8  |                |                                                                    |             |
-| 9  |                |                                                                    |             |
-| 10 |                |                                                                    |             |
-| 11 |                |                                                                    |             |
-| 12 |                |                                                                    |             |
-| 13 |                |                                                                    |             |
-| 14 |                |                                                                    |             |
-| 15 |                |                                                                    |             |
-| 16 |                |                                                                    |             |
-| 17 |                |                                                                    |             |
-| 18 |                |                                                                    |             |
-| 19 |                |                                                                    |             |
-| 20 |                |                                                                    |             |
-| 21 |                |                                                                    |             |
-| 22 |                |                                                                    |             |
-| 23 |                |                                                                    |             |
-| 24 |                |                                                                    |             |
-| 25 |                |                                                                    |             |
+This project is a backend web application built with .NET Core for managing online courses across multiple organizations, inspired by platforms like Hotmart and Kiwify. It allows educators to create and share courses, while students can access content seamlessly, with support for multiple roles and organizational structures.
 
-- o que ele faz?
-- o que é? web api
-- quais tecnologias usadas?
-- qual ambição do projeto?
-- qual estágio do projeto?
-- faça tabelinha de progress
-- listar coisas que não funcionam (list of uses cases that need to be improved)
-- demo executavel
-- documentação legivel e clara
-- commits atomicos
-- semantic versioning
+The ambition of this project is to enhance my development skills and build a real-world application to showcase in my portfolio. The project is currently in development, with a functional prototype coming soon.
 
-## TODO:
-### Generic Features
-- [ ] Generic exceptions (structure logs with sentry)
-- [ ] Global error handler middleware
-- [ ] Global validation filter
+#### 1.2 Demo
 
-### User Features
-- [ ] CRUD User
+Check the project demo in the following link: (not deployed yet)
+
+Or you can see the photos below.
+
+## 2. Project design
+
+#### 2.1 Database schema
+
+#### 2.2 Technologies
+
+#### 3.2 Frameworks
+
+#### 3.3 Architecture and patterns
+
+## 3. Feature Table
+
+~~If want more technical details about some features, you can check on technical discussion.~~
+
+| ID |       Feature        |                 Description                 |      Status      |
+|:--:|:--------------------:|:-------------------------------------------:|:----------------:|
+| 1  |       Database       |   implement and draw all database schema    |   `⏳ Planned`    |
+| 2  |      User CRUD       |     create, read, update, delete users      | `⚙️ In Progress` |
+| 3  |    Authentication    |      secure signUp, signIn and logout       |   `⏳ Planned`    |
+| 4  |    Authorization     | role-based access control and multi-tenancy |   `⏳ Planned`    |
+| 5  |  Subscriptions CRUD  |                                             |   `⏳ Planned`    |
+| 6  |     Courses CRUD     |                                             |   `⏳ Planned`    |
+| 7  |     Modules CRUD     |                                             |   `⏳ Planned`    |
+| 8  |     Classes CRUD     |                                             |   `⏳ Planned`    |
+| 9  | Configuration CI/CD  |                                             |   `⏳ Planned`    |
+| 10 |   Azure Deployment   |                                             |   `⏳ Planned`    |
+| 11 | Notification Service |                                             |   `⏳ Planned`    |
+| 12 |   Payment Service    |               Asaas or stripe               |   `⏳ Planned`    |
+| 13 |   Caching strategy   |                  add redis                  |   `⏳ Planned`    |
+| 14 |    Config Scalar     |        change swagger docs to scalar        |   `⏳ Planned`    |
+| 15 |    IA integration    |               think about it                |   `⏳ Planned`    |
+| 16 |      Front-End       |     not sure if I am going to implement     |   `⏳ Planned`    |
+| 17 |                      |                                             |   `⏳ Planned`    |
+| 18 |                      |                                             |   `⏳ Planned`    |
+| 19 |                      |                                             |   `⏳ Planned`    |
+| 20 |                      |                                             |   `⏳ Planned`    |
+| 21 |                      |                                             |   `⏳ Planned`    |
+| 22 |                      |                                             |   `⏳ Planned`    |
+| 23 |                      |                                             |   `⏳ Planned`    |
+| 24 |                      |                                             |   `⏳ Planned`    |
+| 25 |                      |                                             |   `⏳ Planned`    |
+
+## 4. Getting started
+
+## 5. Contributing
+
+You can send how many PR's do you want, I'll be glad to analyse and accept them! And if you have any question about the
+project just ask...
+
+## 6. License
+
+This project is licensed under the MIT License - see
+the [LICENSE.md](https://github.com/marcuscfarias/course-platform/blob/main/README.md) file for details
+
+## 7. Technical Discussion (my own annotations, ignore below)
+
+#### Feature 1,2,3
+
+```
 - [ ] JWT Authentication
 - [ ] Authorization (role-base and claim access control)
 - [ ] Password hashing (BCrypto)
 - [ ] Multi-tenancy application (discriminator column, tenant context resolution by header using middleware)
 - [ ] Rate limiting per user
 - [ ] CPF Validation
+```
 
-### Signatures features (Plans/Subscriptions)
-- [ ] CRUD
+### Generic Features
 
-### Courses features
-- [ ] CRUD
-- [ ] Assign courses to a signature plan
+```
+- [ ] Generic exceptions (structure logs with sentry)
+- [ ] Global error handler middleware
+- [ ] Global validation filter
+```
 
 ### Modules features
+
+```
 - [ ] CRUD
 - [ ] Class Status Tracking
 - [ ] Track when a user starts or pauses a class
 - [ ] Store current minute so users resume from where they left
 - [ ] Mark class as completed with optional grade or score
 - [ ] Course Progress Summary (Calculate: Total course time, Watched time, Remaining time, Completion percentage)
+```
 
-### Notification Features 
+### Notification Features
+
+```
 - [ ] Email/SMS reminders for appointments using a background service, outbox pattern.
 - [ ] IHostedService and webhooks
+```
 
 ### Payment Integration (Asaas)
+
+```
 - [ ] still thinking about this
 - [ ] Subscription Workflow (Update payment status based on webhook)
 - [ ] Payment Statuses (Pending, Paid, Failed, Canceled, Expired)
+```
 
 ### Roles features
+
+```
 - [ ] Admin – Full control over CRUD and payments
 - [ ] Instructor (optional) – Can create/update their own courses
 - [ ] Student – Can enroll, access classes, track progress
+```
 
 ### Caching with redis features
+
+```
 - [ ] still thinking about this
+```
 
 ### Logging features
+
+```
 - [ ] still thinking about this (Serilog)
+```
 
 ### Architecture and Design:
+
+```
 - [ ] Repository
-- [ ] Clean Architecture 
+- [ ] Clean Architecture
 - [ ] Domain Driven Design
 - [ ] Command Query Responsibility Segregation
 - [ ] TDD (unit and integration tests)
+```
 
-### Database
-- [ ] User table
-  
 ### Deployment:
-- [ ] CD/CI with GitHub actions (Build & Test, Dockerize API, Push Image to GitHub Container Registry, Push Image to GitHub Container Registry)
+
+```
+- [ ] CD/CI with GitHub actions (Build & Test, Dockerize API, Push Image to GitHub Container Registry, Push Image to
+  GitHub Container Registry)
 - [ ] App Service Azure
 - [ ] Key Vault
 - [ ] Dev and Prod environment
 - [ ] config environment variables and secrets
+```
 
 ### Documentation
+
+```
 - [ ] automatically generate them
+```
+
