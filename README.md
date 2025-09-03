@@ -55,15 +55,7 @@ Or you can see the photos below.
 | 14 |    Config Scalar     |        change swagger docs to scalar        |   `⏳ Planned`    |
 | 15 |    IA integration    |               think about it                |   `⏳ Planned`    |
 | 16 |      Front-End       |     not sure if I am going to implement     |   `⏳ Planned`    |
-| 17 |                      |                                             |   `⏳ Planned`    |
-| 18 |                      |                                             |   `⏳ Planned`    |
-| 19 |                      |                                             |   `⏳ Planned`    |
-| 20 |                      |                                             |   `⏳ Planned`    |
-| 21 |                      |                                             |   `⏳ Planned`    |
-| 22 |                      |                                             |   `⏳ Planned`    |
-| 23 |                      |                                             |   `⏳ Planned`    |
-| 24 |                      |                                             |   `⏳ Planned`    |
-| 25 |                      |                                             |   `⏳ Planned`    |
+| 17 |        HTTPS         |                                             |   `⏳ Planned`    |
 
 ## 4. Getting started
 
