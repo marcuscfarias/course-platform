@@ -28,7 +28,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         throw new NotImplementedException();
     }
 
-    public Task UpdateAsync(TEntity entity)
+    public Task<bool> UpdateAsync(TEntity entity)
     {
         throw new NotImplementedException();
     }
