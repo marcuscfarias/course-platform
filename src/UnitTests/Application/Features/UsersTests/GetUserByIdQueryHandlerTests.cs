@@ -1,20 +1,21 @@
-﻿using Application.Features.Users.GetUserById;
+﻿using Application.Features.Users.Contracts;
+using Application.Features.Users.Services;
 using Domain.Entities;
 using Domain.Repositories;
 using FluentAssertions;
 using Moq;
 
-namespace UnitTests.Application.UserTests;
+namespace UnitTests.Application.Features.UsersTests;
 
 public class GetUserByIdQueryHandlerTests
 {
     private readonly Mock<IUserRepository> _userRepository;
-    private readonly GetUserByIdQueryHandler _handler;
+    private readonly IUserServices _userServices;
 
     public GetUserByIdQueryHandlerTests()
     {
         _userRepository = new Mock<IUserRepository>();
-        _handler = new GetUserByIdQueryHandler(_userRepository.Object);
+        _userServices = new UserServices(_userRepository.Object);
     }
 
     [Fact]
@@ -22,7 +23,7 @@ public class GetUserByIdQueryHandlerTests
     {
         //arrange
         int randomId = new Random().Next(1, Int32.MaxValue);
-        GetUserByIdQuery query = new(randomId);
+        GetUserByIdRequest query = new(randomId);
         User? user = null;
 
         _userRepository
@@ -30,7 +31,7 @@ public class GetUserByIdQueryHandlerTests
             .ReturnsAsync(user);
 
         //act
-        var result = await _handler.HandleAsync(query);
+        var result = await _userServices.GetUser(query);
 
         //assert
         result.Should().BeNull();
@@ -42,7 +43,7 @@ public class GetUserByIdQueryHandlerTests
     {
         //arrange
         int randomId = new Random().Next(1, Int32.MaxValue);
-        GetUserByIdQuery query = new(randomId);
+        GetUserByIdRequest query = new(randomId);
         User user = new User("TestingName");
         
         _userRepository
@@ -50,7 +51,7 @@ public class GetUserByIdQueryHandlerTests
             .ReturnsAsync(user);
     
         //act
-        GetUserByIdViewModel? result = await _handler.HandleAsync(query);
+        GetUserByIdResponse? result = await _userServices.GetUser(query);
         
         //assert
         result.Should().NotBeNull();

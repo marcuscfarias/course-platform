@@ -1,23 +1,22 @@
-﻿using Application.Common.Mediator;
-using Moq;
-using Application.Features.Users.CreateUser;
+﻿using Application.Features.Users.Contracts;
+using Application.Features.Users.Services;
 using Bogus;
-using Domain.Repositories;
 using Domain.Entities;
+using Domain.Repositories;
 using FluentAssertions;
+using Moq;
 
-namespace UnitTests.Application.UserTests;
-
+namespace UnitTests.Application.Features.UsersTests;
 
 public class CreateUserCommandHandlerTests
 {
     private readonly Mock<IUserRepository> _userRepository;
-    private readonly CreateUserCommandHandler _handler;
+    private readonly IUserServices _userServices;
 
     public CreateUserCommandHandlerTests()
     {
         _userRepository = new Mock<IUserRepository>();
-        _handler  = new CreateUserCommandHandler(_userRepository.Object);
+        _userServices = new UserServices(_userRepository.Object);
     }
 
     // MethodName_StateUnderTest_ExpectedBehavior
@@ -26,28 +25,28 @@ public class CreateUserCommandHandlerTests
     {
         //arrange
         int randomId = new Random().Next(1, Int32.MaxValue);
-        CreateUserCommand command = CreateUserCommandFake();
+        CreateUserRequest command = CreateUserCommandFake();
 
         _userRepository
             .Setup(x => x.AddAsync(It.IsAny<User>()))
             .ReturnsAsync(randomId);
 
         //act
-        var result = await _handler.HandleAsync(command);
+        var result = await _userServices.CreateUser(command);
 
         //assert
         result.Should().Be(randomId);
         _userRepository.Verify(x => x.AddAsync(It.IsAny<User>()), Times.Once);
     }
-    
+
     //TODO: add user already exists
     //TODO: add invalid request
 
-    private static CreateUserCommand CreateUserCommandFake()
+    private static CreateUserRequest CreateUserCommandFake()
     {
-        var faker = new Faker<CreateUserCommand>()
+        var faker = new Faker<CreateUserRequest>()
             .CustomInstantiator(f =>
-                new CreateUserCommand(f.Name.FullName()));
+                new CreateUserRequest(f.Name.FullName()));
 
         return faker.Generate();
     }

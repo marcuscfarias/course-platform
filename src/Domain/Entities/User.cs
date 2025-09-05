@@ -27,4 +27,10 @@ public class User : BaseEntity
         Name = name;
         UpdatedAt = DateTimeOffset.UtcNow;
     }
+    
+    public void Deactivate()
+    {
+        IsActive = false;
+        UpdatedAt = DateTimeOffset.UtcNow;
+    }
 }

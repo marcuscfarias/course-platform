@@ -1,20 +1,21 @@
-﻿using Application.Features.Users.UpdateUser;
+﻿using Application.Features.Users.Contracts;
+using Application.Features.Users.Services;
 using Domain.Entities;
 using Domain.Repositories;
 using FluentAssertions;
 using Moq;
 
-namespace UnitTests.Application.UserTests;
+namespace UnitTests.Application.Features.UsersTests;
 
 public class UpdateUserCommandHandlerTests
 {
     private readonly Mock<IUserRepository> _userRepository;
-    private readonly UpdateUserCommandHandler _handler;
+    private readonly IUserServices _userServices;
 
     public UpdateUserCommandHandlerTests()
     {
         _userRepository = new Mock<IUserRepository>();
-        _handler = new UpdateUserCommandHandler(_userRepository.Object);
+        _userServices = new  UserServices(_userRepository.Object);
     }
 
     [Fact]
@@ -25,7 +26,7 @@ public class UpdateUserCommandHandlerTests
         string newName = "UpdatedName";
         User existingUser = new("OldName");
 
-        var updateCommand = new UpdateUserCommand(randomId, newName);
+        var updateCommand = new UpdateUserRequest(randomId, newName);
 
         _userRepository
             .Setup(x => x.GetByIdAsync(randomId))
@@ -36,12 +37,11 @@ public class UpdateUserCommandHandlerTests
             .ReturnsAsync(true);
 
         // Act
-        var result = await _handler.HandleAsync(updateCommand);
+        await _userServices.UpdateUser(updateCommand);
 
         // Assert
         _userRepository.Verify(x => x.GetByIdAsync(randomId), Times.Once);
         _userRepository.Verify(x => x.UpdateAsync(existingUser), Times.Once);
         existingUser.Name.Should().Be(newName);
-        Assert.Equal(1, result); 
     }
 }
