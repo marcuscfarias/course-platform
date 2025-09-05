@@ -1,9 +1,8 @@
 ﻿using Application.Features.Users.Services;
-using Domain.Entities;
 using Domain.Repositories;
 using Moq;
 
-namespace UnitTests.Application.Features.UsersTests;
+namespace UnitTests.Application.Features.UsersTests.Services;
 
 public class GetAllUsersTests
 {

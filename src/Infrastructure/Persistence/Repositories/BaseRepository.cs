@@ -23,9 +23,10 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         throw new NotImplementedException();
     }
 
-    public Task<int> AddAsync(TEntity entity)
+    public async Task<int> AddAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        await _context.Set<TEntity>().AddAsync(entity);
+        return await _context.SaveChangesAsync();
     }
 
     public Task<bool> UpdateAsync(TEntity entity)

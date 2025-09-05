@@ -7,10 +7,10 @@ namespace Application.Features.Users.Services;
 
 public class UserServices(IUserRepository userRepository) : IUserServices
 {
-    public async Task<GetUserByIdResponse> GetUser(GetUserByIdRequest request,
+    public async Task<GetUserByIdResponse> GetUser(int id,
         CancellationToken cancellationToken = default)
     {
-        var user = await userRepository.GetByIdAsync(request.Id);
+        var user = await userRepository.GetByIdAsync(id);
 
         if (user is null)
             return null;
@@ -42,7 +42,7 @@ public class UserServices(IUserRepository userRepository) : IUserServices
     {
         var user = await userRepository.GetByIdAsync(id);
 
-        user.Deactivate();
+        // user.Deactivate();
 
         await userRepository.DeleteAsync(user);
     }

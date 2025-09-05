@@ -6,7 +6,7 @@ using Domain.Repositories;
 using FluentAssertions;
 using Moq;
 
-namespace UnitTests.Application.Features.UsersTests;
+namespace UnitTests.Application.Features.UsersTests.Services;
 
 public class CreateUserCommandHandlerTests
 {

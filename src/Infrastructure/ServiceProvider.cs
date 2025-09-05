@@ -36,6 +36,8 @@ public static class ServiceProvider
         
         // //appSettings
         // string? connectionString = configuration.GetConnectionString("DefaultConnection");
+        
+        //docker
         string? connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
 
         if (connectionString is null)

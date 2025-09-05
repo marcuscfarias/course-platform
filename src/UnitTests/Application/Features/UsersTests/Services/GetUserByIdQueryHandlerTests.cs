@@ -5,7 +5,7 @@ using Domain.Repositories;
 using FluentAssertions;
 using Moq;
 
-namespace UnitTests.Application.Features.UsersTests;
+namespace UnitTests.Application.Features.UsersTests.Services;
 
 public class GetUserByIdQueryHandlerTests
 {
@@ -23,7 +23,6 @@ public class GetUserByIdQueryHandlerTests
     {
         //arrange
         int randomId = new Random().Next(1, Int32.MaxValue);
-        GetUserByIdRequest query = new(randomId);
         User? user = null;
 
         _userRepository
@@ -31,7 +30,7 @@ public class GetUserByIdQueryHandlerTests
             .ReturnsAsync(user);
 
         //act
-        var result = await _userServices.GetUser(query);
+        var result = await _userServices.GetUser(randomId);
 
         //assert
         result.Should().BeNull();
@@ -43,7 +42,6 @@ public class GetUserByIdQueryHandlerTests
     {
         //arrange
         int randomId = new Random().Next(1, Int32.MaxValue);
-        GetUserByIdRequest query = new(randomId);
         User user = new User("TestingName");
         
         _userRepository
@@ -51,7 +49,7 @@ public class GetUserByIdQueryHandlerTests
             .ReturnsAsync(user);
     
         //act
-        GetUserByIdResponse? result = await _userServices.GetUser(query);
+        GetUserByIdResponse? result = await _userServices.GetUser(randomId);
         
         //assert
         result.Should().NotBeNull();
