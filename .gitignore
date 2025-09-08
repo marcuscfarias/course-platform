@@ -485,3 +485,4 @@ $RECYCLE.BIN/
 
 # project files
 src/API/Http/**
+src/API/appsettings.Development.json

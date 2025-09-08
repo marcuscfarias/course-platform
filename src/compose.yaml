@@ -1,7 +1,40 @@
-﻿services:
+﻿version: '3.8'
+
+services:
   api:
-    image: api
     build:
       context: .
       dockerfile: API/Dockerfile
 
+    container_name: my_api
+    ports:
+      - "8080:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=my_database;Username=postgres;Password=my_strong_password
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: on-failure
+  
+  postgres:
+    image: postgres:16
+    container_name: my_postgres_db
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=my_strong_password
+      - POSTGRES_DB=my_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
