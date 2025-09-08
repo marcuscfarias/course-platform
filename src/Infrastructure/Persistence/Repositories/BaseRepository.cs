@@ -13,9 +13,12 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         _context = context;
     }
 
-    public Task<TEntity?> GetByIdAsync(int id)
+    public async Task<TEntity?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var entity = await _context.Set<TEntity>()
+            .SingleOrDefaultAsync(x => x.Id == id);
+
+        return entity;
     }
 
     public Task<IEnumerable<TEntity>> GetAllAsync()
@@ -29,13 +32,15 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         return await _context.SaveChangesAsync();
     }
 
-    public Task<bool> UpdateAsync(TEntity entity)
+    public async Task UpdateAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        _context.Entry(entity).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
     }
 
-    public Task DeleteAsync(TEntity entity)
+    public async Task DeleteAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        _context.Set<TEntity>().Remove(entity);
+        await _context.SaveChangesAsync();
     }
 }

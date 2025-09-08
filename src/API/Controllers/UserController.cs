@@ -1,5 +1,6 @@
 ﻿using Application.Features.Users.Contracts;
 using Application.Features.Users.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -20,6 +21,29 @@ public class UserController(IUserServices userServices) : ControllerBase
     {
         int newId = await userServices.CreateUser(request);
 
-        return new ObjectResult(newId);
+        return CreatedAtAction(nameof(GetById), new { id = newId }, request);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById([FromRoute] int id)
+    {
+        GetUserByIdResponse userResponse = await userServices.GetUser(id);
+
+        return Ok(userResponse);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update([FromRoute] int id, UpdateUserRequest request)
+    {
+        await userServices.UpdateUser(id, request);
+
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] int id)
+    {
+        await userServices.DeleteUser(id);
+        return Ok();
     }
 }

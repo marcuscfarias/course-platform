@@ -15,7 +15,7 @@ public class UpdateUserCommandHandlerTests
     public UpdateUserCommandHandlerTests()
     {
         _userRepository = new Mock<IUserRepository>();
-        _userServices = new  UserServices(_userRepository.Object);
+        _userServices = new UserServices(_userRepository.Object);
     }
 
     [Fact]
@@ -26,18 +26,17 @@ public class UpdateUserCommandHandlerTests
         string newName = "UpdatedName";
         User existingUser = new("OldName");
 
-        var updateCommand = new UpdateUserRequest(randomId, newName);
+        var updateCommand = new UpdateUserRequest(newName);
 
         _userRepository
             .Setup(x => x.GetByIdAsync(randomId))
             .ReturnsAsync(existingUser);
 
         _userRepository
-            .Setup(x => x.UpdateAsync(existingUser))
-            .ReturnsAsync(true);
+            .Setup(x => x.UpdateAsync(existingUser));
 
         // Act
-        await _userServices.UpdateUser(updateCommand);
+        await _userServices.UpdateUser(randomId, updateCommand);
 
         // Assert
         _userRepository.Verify(x => x.GetByIdAsync(randomId), Times.Once);

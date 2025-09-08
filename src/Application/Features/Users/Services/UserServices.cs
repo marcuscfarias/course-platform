@@ -27,11 +27,11 @@ public class UserServices(IUserRepository userRepository) : IUserServices
         return id;
     }
 
-    public async Task UpdateUser(UpdateUserRequest request, CancellationToken cancellationToken = default)
+    public async Task UpdateUser(int id, UpdateUserRequest request, CancellationToken cancellationToken = default)
     {
         // var user = request.ToDomain();
 
-        var user = await userRepository.GetByIdAsync(request.Id);
+        var user = await userRepository.GetByIdAsync(id);
 
         user.ChangeName(request.Name);
 
